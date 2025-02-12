@@ -1,23 +1,65 @@
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
-header {grid-area: header;}
-.siamese {grid-area: siamese;}
-.russian-blue {grid-area: russian-blue;}
-.bengal {grid-area: bengal;}
-.ragdoll {grid-area: ragdoll;}
-.ginger {grid-area: ginger;}
-.british-shorthair {grid-area: british-shorthair;}
-.birman {grid-area: birman;}
-.sphynx {grid-area: sphynx;}
-.somali {grid-area: somali;}
-.main-coon {grid-area: main-coon;}
-.abyssinian {grid-area: abyssinian;}
-.scottish-fold {grid-area: scottish-fold;}
+header {
+    grid-area: header;
+}
+
+.siamese {
+    grid-area: siamese;
+}
+
+.russian-blue {
+    grid-area: russian-blue;
+}
+
+.bengal {
+    grid-area: bengal;
+}
+
+.ragdoll {
+    grid-area: ragdoll;
+}
+
+.ginger {
+    grid-area: ginger;
+}
+
+.british-shorthair {
+    grid-area: british-shorthair;
+}
+
+.birman {
+    grid-area: birman;
+}
+
+.sphynx {
+    grid-area: sphynx;
+}
+
+.somali {
+    grid-area: somali;
+}
+
+.main-coon {
+    grid-area: main-coon;
+}
+
+.abyssinian {
+    grid-area: abyssinian;
+}
+
+.scottish-fold {
+    grid-area: scottish-fold;
+}
 
 body {
-    /* background-image: url('../images/siberian-fixed.jpg'); */
-    background-repeat: repeat;  /* Ensures the pattern repeats across the entire page */
-    background-size: auto;  /* You can adjust the size of the pattern */
+    background-image: url('../images/paw-print.jpg');
+    background-repeat: repeat;
+    /* Ensures the pattern repeats across the entire page */
+    background-size: 35%;
+    /* You can adjust the size of the pattern */
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
@@ -34,13 +76,12 @@ img {
     height: auto;
     border-radius: 100px;
 }
-    /* create a button for each of the cat and change the pixel length of the button. 620 px width and height. */
 
 button {
     background-color: white;
     border: 1px solid black;
-    border-radius: 100px;  
-    padding: 20px;  
+    border-radius: 100px;
+    padding: 20px;
     width: 180px;
     height: 180px;
 }
