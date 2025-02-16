@@ -1,3 +1,5 @@
+// @ts-check
+
 const the_cat_zodiacs = [
     {
         name: 'Siamese',
@@ -48,3 +50,36 @@ const the_cat_zodiacs = [
         text: 'Like a Scottish Fold, you are someone that is compassionate and forms strong, emotional bonds with others. You tend to be empathetic, creative, sensitive, and have an intuitive nature. You enjoy forming strong connections with others without being overly demanding and are on the quieter side, which aligns with your gentle nature and peaceful energy. You have a strong connection to emotions and a love for the arts, and are often considered to be dreamy and compassionate.'
     }
 ];
+
+/* function display_text {
+    
+} */
+
+function display_text(month, day) {
+    if ((month === 3 && day >= 21) || (month === 4 && day <= 20)) {
+        return the_cat_zodiacs[0];
+    } else if ((month === 4 && day >= 21) || (month === 5 && day <= 20)) {
+        return the_cat_zodiacs[1];
+    } else if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) {
+        return the_cat_zodiacs[2];
+    } else if ((month === 6 && day >= 21) || (month === 7 && day <= 22)) {
+        return the_cat_zodiacs[3];
+    } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
+        return the_cat_zodiacs[4];
+    } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
+        return the_cat_zodiacs[5];
+    } else if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) {
+        return the_cat_zodiacs[6];
+    } else if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) {
+        return the_cat_zodiacs[7];
+    } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
+        return the_cat_zodiacs[8];
+    } else if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
+        return the_cat_zodiacs[9];
+    } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
+        return the_cat_zodiacs[10];
+    } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
+        return the_cat_zodiacs[11];
+    } else return null;
+}
+/* how do i make this so it displays just the text? */
