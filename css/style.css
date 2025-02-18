@@ -55,10 +55,10 @@ header {
 }
 
 body {
-    background-image: url('../images/paw-print.jpg');
-    background-repeat: repeat;
+    background-image: url('../images/zodiac.jpg');
+    background-repeat: 0;
     /* Ensures the pattern repeats across the entire page */
-    background-size: 35%;
+    background-size: 100%;
     /* You can adjust the size of the pattern */
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -74,14 +74,12 @@ body {
 img {
     width: 100%;
     height: auto;
-    border-radius: 100px;
 }
 
 button {
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 100px;
-    padding: 20px;
-    width: 180px;
-    height: 180px;
+    visibility: hidden;
+
+    img {
+        visibility: visible;
+    }
 }
