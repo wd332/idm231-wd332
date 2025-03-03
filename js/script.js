@@ -57,7 +57,7 @@ const the_cat_zodiacs = [
 
 function display_text(month, day) {
     if ((month === 3 && day >= 21) || (month === 4 && day <= 20)) {
-        return the_cat_zodiacs[0];
+        return the_cat_zodiacs[0].text;
     } else if ((month === 4 && day >= 21) || (month === 5 && day <= 20)) {
         return the_cat_zodiacs[1];
     } else if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) {
@@ -83,3 +83,12 @@ function display_text(month, day) {
     } else return null;
 }
 /* how do i make this so it displays just the text? */
+
+const my_cat = document.getElementsByTagName('img');
+
+for (let i = 0; i < the_cat_zodiacs.length; i++) {
+    const cat = my_cat[i];                              // so that when the user clicks, it will connect with individual images
+    cat.addEventListener('click', () => {
+        console.log(the_cat_zodiacs[i]);
+    }, false);
+}

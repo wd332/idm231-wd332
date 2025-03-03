@@ -55,16 +55,27 @@ header {
 }
 
 body {
-    background-image: url('../images/zodiac.jpg');
+    background-image: url('../images/background.webp');
     background-repeat: 0;
     /* Ensures the pattern repeats across the entire page */
     background-size: 100%;
     /* You can adjust the size of the pattern */
+
+    height: 100vh;
+    justify-items: center;
+    align-items: center;
+}
+
+main {
+    width: 800px;
+    height: 800px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
+
+    place-items: center;
     grid-template-areas:
-        '. header header header header .'
+        '. title title title title .'
         '. siamese russian-blue bengal ragdoll .'
         '. ginger . . british-shorthair .'
         '. birman . . sphynx .'
