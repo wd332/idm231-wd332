@@ -6,6 +6,13 @@
     grid-area: title;
 }
 
+#help-icon {
+    grid-area: help-icon;
+    width: 50%;
+    height: auto;
+    background-color: white;
+}
+
 .siamese {
     grid-area: siamese;
 }
@@ -54,6 +61,11 @@
     grid-area: scottish-fold;
 }
 
+#info {
+    grid-area: info;
+    margin: 50px;
+}
+
 body {
     background-image: url('../images/background.webp');
     background-size: 100%;
@@ -69,15 +81,14 @@ main {
     height: 800px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: auto;
-
+    grid-template-rows: repeat(6, 1fr);
     place-items: center;
     grid-template-areas:
-        'title title title title title'
+        '. title title title help-icon'
         '. siamese russian-blue bengal .'
-        'scottish-fold . . . ragdoll'
-        'abyssinian . . . ginger'
-        'main-coon . . . british-shorthair'
+        'scottish-fold info info info ragdoll'
+        'abyssinian info info info ginger'
+        'main-coon info info info british-shorthair'
         '. somali sphynx birman .';
 }
 
@@ -91,8 +102,8 @@ img {
 
 img:hover {
     transform: scale(1.1);
-    box-shadow: 0px 0px 4px 0.5px rgb(156, 156, 156);
-    background-color: rgb(255 205 200);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.6));
+
 }
 
 button {
@@ -101,4 +112,13 @@ button {
     img {
         visibility: visible;
     }
+}
+
+#help-screen {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.hidden {
+    display: none;
 }

@@ -24,7 +24,8 @@ const the_cat_zodiacs = [
     {
         date: 'July 23 - August 22',
         name: 'Ginger',
-        text: 'Like a Ginger, you are known for your big, loyal personalities and love for attention. You are known for your confidence, generosity, and charisma. As a natural-born leader and a loyal person, you are often radiating warm energy that attracts others to you. You are also, at times, have a hint of expressing yourself in bold and dramatic ways and will stop at nothing to achieve your goals.'
+        text: 'Like a Ginger, you are known for your big, loyal personalities and love for attention. You are known for your confidence, generosity, and charisma. As a natural-born leader and a loyal person, you are often radiating warm energy that attracts others to you. You are also, at times, have a hint of expressing yourself in bold and dramatic ways and will stop at nothing to achieve your goals.',
+        sound: 'sounds/orange.mp3'
     },
     {
         date: 'August 23 - September 22',
@@ -69,7 +70,7 @@ const the_cat_zodiacs = [
 
 function display_text(month, day) {
     if ((month === 3 && day >= 21) || (month === 4 && day <= 20)) {
-        return the_cat_zodiacs[0].text;
+        return the_cat_zodiacs[0];
     } else if ((month === 4 && day >= 21) || (month === 5 && day <= 20)) {
         return the_cat_zodiacs[1];
     } else if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) {
@@ -94,15 +95,30 @@ function display_text(month, day) {
         return the_cat_zodiacs[11];
     } else return null;
 }
-/* how do i make this so it displays just the text? */
 
-const my_cat = document.getElementsByTagName('img');
+const my_cat = document.querySelectorAll('.cat-button');
 
 for (let i = 0; i < the_cat_zodiacs.length; i++) {
-    const image = my_cat[i];                              // so that when the user clicks, it will connect with individual images
+    const image = my_cat[i];                            // so that when the user clicks, it will connect with individual images
     image.addEventListener('click', () => {
         const cat = the_cat_zodiacs[i];
         const info = document.getElementById('info');
-        info.innerHTML = `<h2> ${cat.date} ${cat.name} </h2> <p> ${cat.text} </p>`
+        if (info) {
+            info.innerHTML = `<h2> ${cat.name} </h2> <h3> ${cat.date} </h3> <p> ${cat.text} </p>`
+        }
     }, false);
+}
+
+const help_icon = document.getElementById('help-icon');
+
+if (help_icon) {
+    help_icon.addEventListener('click', () => {
+        const screen = document.getElementById('help-screen');
+        if (screen?.classList.contains("hidden")) {         // finds the class with hidden
+            screen.classList.remove("hidden");              // removes the hidden class so then screen is visible
+        }
+        else {
+            screen?.classList.add("hidden");                // if the screen is already visible, this makes it hidden again
+        }
+    })
 }
