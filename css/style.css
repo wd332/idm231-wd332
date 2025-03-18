@@ -106,12 +106,14 @@ img:hover {
 
 }
 
-button {
-    visibility: hidden;
+#submit {
+    background-color: rgb(69, 69, 69);
+    color: white;
+}
 
-    img {
-        visibility: visible;
-    }
+button {
+    background: transparent;
+    border: 0;
 }
 
 #help-screen {
