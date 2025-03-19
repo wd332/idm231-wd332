@@ -114,7 +114,7 @@ function log_birthday(birthday) {
         year: birthday[0],
         month: birthday[1],
         day: birthday[2]
-    }
+    };
     return date;
 }
 
@@ -129,8 +129,8 @@ function handle_submit(event) {
     if (birthday) {
         const info = document.getElementById('info');
         if (info) {
-            info.innerHTML = `<h2> ${birthday.name} </h2> <h3> ${birthday.date} </h3> <p> ${birthday.text} </p>`
-        };
+            info.innerHTML = `<h2> ${birthday.name} </h2> <h3> ${birthday.date} </h3> <p> ${birthday.text} </p>`;
+        }
         const audio = new Audio(birthday.sound);
         all_sounds.push(audio);             // pushes and adds the audio into the all_sounds array for easier control
         stop_all_sounds();
@@ -150,8 +150,8 @@ for (let i = 0; i < the_cat_zodiacs.length; i++) {
         const cat = the_cat_zodiacs[i];
         const info = document.getElementById('info');
         if (info) {
-            info.innerHTML = `<h2> ${cat.name} </h2> <h3> ${cat.date} </h3> <p> ${cat.text} </p>`
-        };
+            info.innerHTML = `<h2> ${cat.name} </h2> <h3> ${cat.date} </h3> <p> ${cat.text} </p>`;
+        }
     }, false);
 }
 
@@ -161,7 +161,7 @@ function stop_all_sounds() {
     all_sounds.forEach((audio) => {     // loops through each audio to pause it and resets the time to 0
         audio.pause();
         audio.currentTime = 0;          // resets everything back to 0
-    })
+    });
 }
 
 for (let i = 0; i < the_cat_zodiacs.length; i++) {
@@ -186,5 +186,5 @@ if (help_icon) {
         else {
             screen?.classList.add("hidden");                // if the screen is already visible, this makes it hidden again
         }
-    })
+    });
 }
