@@ -107,6 +107,7 @@ function date_info(month, day) {
 }
 
 const form = document.querySelector('form');
+let all_sounds = [];            // empty array for the push and add of audio
 
 function log_birthday(birthday) {
     console.log(birthday);
@@ -154,8 +155,6 @@ for (let i = 0; i < the_cat_zodiacs.length; i++) {
         }
     }, false);
 }
-
-let all_sounds = [];            // empty array for the push and add of audio
 
 function stop_all_sounds() {
     all_sounds.forEach((audio) => {     // loops through each audio to pause it and resets the time to 0
