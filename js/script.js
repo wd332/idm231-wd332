@@ -74,11 +74,11 @@ const the_cat_zodiacs = [
     }
 ];
 
-/* function display_text {
-    
-} */
-
-function display_text(month, day) {
+/**
+ * @param {number} month
+ * @param {number} day
+ */
+function date_info(month, day) {
     if ((month === 3 && day >= 21) || (month === 4 && day <= 20)) {
         return the_cat_zodiacs[0];
     } else if ((month === 4 && day >= 21) || (month === 5 && day <= 20)) {
@@ -106,6 +106,42 @@ function display_text(month, day) {
     } else return null;
 }
 
+const form = document.querySelector('form');
+
+function log_birthday(birthday) {
+    console.log(birthday);
+    const date = {
+        year: birthday[0],
+        month: birthday[1],
+        day: birthday[2]
+    }
+    return date;
+}
+
+/**
+ * @param {{ preventDefault: () => void; }} event
+ */
+function handle_submit(event) {
+    event.preventDefault();             // prevents the form from automatically refreshing the page
+    const date_object = log_birthday(form?.elements['birthday'].value.split('-'));
+    const birthday = date_info(parseInt(date_object.month), parseInt(date_object.day));             // this connnects the submitted information with the correct cat
+
+    if (birthday) {
+        const info = document.getElementById('info');
+        if (info) {
+            info.innerHTML = `<h2> ${birthday.name} </h2> <h3> ${birthday.date} </h3> <p> ${birthday.text} </p>`
+        };
+        const audio = new Audio(birthday.sound);
+        all_sounds.push(audio);             // pushes and adds the audio into the all_sounds array for easier control
+        stop_all_sounds();
+        audio.play();
+    }
+}
+
+if (form) {
+    form.addEventListener('submit', handle_submit, false);
+}
+
 const my_cat = document.querySelectorAll('.cat-button');
 
 for (let i = 0; i < the_cat_zodiacs.length; i++) {
@@ -122,9 +158,9 @@ for (let i = 0; i < the_cat_zodiacs.length; i++) {
 let all_sounds = [];            // empty array for the push and add of audio
 
 function stop_all_sounds() {
-    all_sounds.forEach((audio) => {
+    all_sounds.forEach((audio) => {     // loops through each audio to pause it and resets the time to 0
         audio.pause();
-        audio.currentTime = 0;          // reset everything to 0
+        audio.currentTime = 0;          // resets everything back to 0
     })
 }
 
@@ -138,10 +174,6 @@ for (let i = 0; i < the_cat_zodiacs.length; i++) {
         audio.play();
     }, false);
 }
-
-/* function audio() {
-    const audio = new Audio
-} */
 
 const help_icon = document.getElementById('help-icon');
 
