@@ -52,7 +52,8 @@ const the_cat_zodiacs = [
     {
         date: 'November 22 - December 21',
         name: 'Somali',
-        text: 'Like a Somali, you are someone that\'s adventurous and prefer to be free and with a sense of independence. You love exploring new places and ideas, with a strong desire for freedom. Because of this, you tend to be implusive with your decisions and this may lead to unintended problems.'
+        text: 'Like a Somali, you are someone that\'s adventurous and prefer to be free and with a sense of independence. You love exploring new places and ideas, with a strong desire for freedom. Because of this, you tend to be implusive with your decisions and this may lead to unintended problems.',
+        sound: 'sounds/cute.mp3'
     },
     {
         date: 'December 22 - January 19',
