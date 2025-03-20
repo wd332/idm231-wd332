@@ -3,7 +3,7 @@
 }
 
 @font-face {
-    font-family: 'Quicksand';
+    font-family: Quicksand;
     src: url('../font/Quicksand-Light.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
@@ -80,16 +80,14 @@ body {
     /* You can adjust the size of the pattern */
 
     height: 100vh;
-    justify-items: center;
-    align-items: center;
+    place-items: center;
 }
 
 main {
     width: 800px;
     height: 800px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template: repeat(6, 1fr) / repeat(5, 1fr);
     place-items: center;
     grid-template-areas:
         '. title title title help-icon'
